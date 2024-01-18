@@ -1,0 +1,22 @@
+<nav class="bg-white dark:bg-gray-900 shadow">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+
+      @if (sidebarSignal.sidebarOpen()) {
+      <mat-icon class="dark:text-white cursor-pointer" (click)="toggle()">close</mat-icon>
+
+      }
+      @else{
+      <mat-icon class="dark:text-white cursor-pointer" (click)="toggle()">menu</mat-icon>
+      }
+
+      <span class="text-xl md:text-4xl font-semibold text-gray-700 dark:text-white">
+        AMT Starter
+      </span>
+
+      <div>
+        <button class="text-gray-600 dark:text-gray-300 hover:underline hidden sm:block">Home</button>
+      </div>
+    </div>
+  </div>
+</nav>
