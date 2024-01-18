@@ -1,77 +1,25 @@
-<div class="min-h-screen bg-gray-100 dark:bg-gray-800">
+<div class="relative min-h-screen bg-gray-100 dark:bg-gray-800">
   <!-- Navbar -->
-  <nav class="bg-white dark:bg-gray-900 shadow">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex justify-between items-center">
-        <div class="text-4xl font-semibold text-gray-700 dark:text-white">Angular + Material + Tailwind</div>
-        <div>
-          <button class="text-gray-600 dark:text-gray-300 hover:underline">Home</button>
-          <!-- Add more navigation items here -->
-        </div>
-      </div>
-    </div>
-  </nav>
+  <app-header />
+  <mat-sidenav-container class="dark:bg-gray-800">
 
-  <!-- Hero Section -->
-  <div class="py-16">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-2 text-gray-800 dark:text-white">
-        Angular Material & Tailwind CSS Boilerplate
-      </h2>
-      <h3 class="text-2xl mb-8 text-gray-700 dark:text-gray-200">
-        Kickstart your project with ease!
-      </h3>
-
-      <!-- Features -->
-      <div class="flex items-center flex-wrap mb-20">
-        <!-- Feature 1 -->
-        <div class="w-full h-52 md:w-1/2 p-4">
-          <div class="h-full bg-white dark:bg-gray-700 shadow p-8 rounded">
-            <h4 class="font-bold mb-3 text-2xl text-white">Modern Angular Practices</h4>
-            <p class="text-gray-600 dark:text-gray-300 text-sm">
-              Utilizing the latest Angular features and best practices for optimal performance and maintainability.
-            </p>
-          </div>
-        </div>
-        <!-- Feature 2 -->
-        <div class="w-full h-52 md:w-1/2 p-4">
-          <div class="h-full bg-white dark:bg-gray-700 shadow p-8 rounded">
-            <h4 class="font-bold mb-3 text-2xl text-white">Integrated Tailwind CSS</h4>
-            <p class="text-gray-600 dark:text-gray-300 text-sm">
-              A utility-first CSS framework for rapid UI development, fully integrated with Angular's component
-              architecture.
-            </p>
-          </div>
-        </div>
-        <!-- Feature 2 -->
-        <div class="w-full mx-auto h-52 md:w-1/2 p-4">
-          <div class="h-full bg-white dark:bg-gray-700 shadow p-8 rounded">
-            <h4 class="font-bold mb-3 text-2xl text-white">Integrated Angular Material</h4>
-            <p class="text-gray-600 dark:text-gray-300 text-sm">
-            High quality
-            Internationalized and accessible components for everyone. Well tested to ensure performance and reliability.
-
-            Straightforward APIs with consistent cross platform behaviour.
-
-            Versatile
-            Provide tools that help developers build their own custom components with common interaction patterns.
-            </p>
-          </div>
-        </div>
+    <mat-sidenav appScreenSize (screenChange)="computeSize($event)" #sidenav [mode]="screenSignal.currenScreenSize() === 'small' ? 'over': 'side'" [opened]="sidebarSignal.sidebarOpen()"
+      class="w-64 bg-gray-800 shadow-[0px_8px_10px_-5px_rgb(77_140_228),0px_16px_24px_2px_rgb(17_19_23),0px_6px_30px_5px_rgb(29_32_35_/_72%)]">
+      <div class="flex flex-col gap-5 justify-center m-5">
+        <button mat-flat-button class="w-full" routerLink="/login">Login</button>
+        <button mat-flat-button class="w-full">Signup</button>
+        <button mat-flat-button class="w-full">Basic</button>
 
       </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="bg-gray-800">
+      <router-outlet />
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
 
-      <!-- More content here -->
-    </div>
-  </div>
 
   <!-- Footer -->
-  <footer class="bg-white absolute w-full bottom-0 dark:bg-gray-900">
-    <div class="container mx-auto px-6 py-4">
-      <p class="text-gray-700 dark:text-white text-center">
-        © 2023 Angular Material Tailwind Boilerplate
-      </p>
-    </div>
-  </footer>
+  <app-footer />
 </div>

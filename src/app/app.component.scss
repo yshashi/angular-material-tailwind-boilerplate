@@ -1,0 +1,14 @@
+.mat-drawer{
+  background: hsl(215, 45%, 42%);
+}
+.mat-drawer-container{
+  background: none;
+}
+.mat-drawer-content {
+  height: calc(100vh - 112px);
+}
+button{
+  background: transparent !important;
+  color: #f0f0f0 !important;
+  border: 1px solid !important;
+}
